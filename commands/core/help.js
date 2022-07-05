@@ -10,7 +10,6 @@ module.exports = {
         const embed = new MessageEmbed();
 
         embed.setColor('RED');
-        embed.setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
 
         embed.setDescription('[CenterQuickMusic](https://www.youtube.com/channel/UCq7NsIPj_7DGwiKzeimi_mA)');
         embed.addField('`play` Bir parça oynatır.');
