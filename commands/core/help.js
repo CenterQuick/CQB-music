@@ -5,7 +5,7 @@ module.exports = {
     aliases: ['h', 'yardım'],
     showHelp: false,
     utilisation: '{prefix}help',
-
+};
 
     const embed = new MessageEmbed();
 
@@ -27,5 +27,4 @@ module.exports = {
     embed.setFooter(`${message.author.username}` , message.author.avatarURL({ dynamic: true }));
 
     message.channel.send({ embeds: [embed] });
-  
-};
+ 
