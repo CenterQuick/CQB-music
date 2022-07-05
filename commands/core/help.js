@@ -7,7 +7,7 @@ module.exports = {
     utilisation: '{prefix}help',
 
     execute(client, message, args) {
-        const helpy = new MessageEmbed();
+        const embed = new MessageEmbed();
 
         embed.setColor('RED');
 
@@ -26,6 +26,6 @@ module.exports = {
 
         embed.setFooter(`${message.author.username}` , message.author.avatarURL({ dynamic: true }));
 
-        message.channel.send(helpy);
+        message.channel.send(embed);
     },
 };
