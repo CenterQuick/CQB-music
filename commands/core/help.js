@@ -15,7 +15,7 @@ module.exports = {
 
         const commands = client.commands.filter(x => x.showHelp !== false);
 
-        embed.setDescription('m?play ile müzik çal\nm?resume müzik dinlemeye devam et\nm?stop müziği durdur\nm?search youtube de ara\nm?save kayıt et\nm?nowplaying oynatılana bak');
+        embed.setDescription('[CenterQuickMusic](https://www.youtube.com/channel/UCq7NsIPj_7DGwiKzeimi_mA)\nm?play ile müzik çal\nm?resume müzik dinlemeye devam et\nm?stop müziği durdur\nm?search youtube de ara\nm?save kayıt et\nm?nowplaying oynatılana bak');
         embed.addField(`Enabled - ${commands.size}`, commands.map(x => `\`${x.name}${x.aliases[0] ? ` (${x.aliases.map(y => y).join(', ')})\`` : '\`'}`).join(' | '));
 
         embed.setTimestamp();
