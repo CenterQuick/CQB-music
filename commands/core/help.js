@@ -7,7 +7,7 @@ module.exports = {
     utilisation: '{prefix}help',
 };
 
-message.channel.send("""
+message.channel.send('
     `play` Bir parça oynatır.
     `queue` Sıraya bir parça ekler.
     `pause` Oynatılan parçayı durdurur.
@@ -19,5 +19,5 @@ message.channel.send("""
     `stop` Parçayı durdurur.
     `search` Youtube araması yapar.
     `nowplaying` Çalmakta olan parçayı gösterir.
-""");
+');
  
