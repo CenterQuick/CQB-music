@@ -5,26 +5,25 @@ module.exports = {
     aliases: ['h', 'yardım'],
     showHelp: false,
     utilisation: '{prefix}help',
-};
-
-    const embed = new MessageEmbed();
+    
+    
+    execute(client, message, args) {
+        const embed = new MessageEmbed();
 
         embed.setColor('RED');
+        embed.setAuthor(client.user.username, client.user.displayAvatarURL({ size: 1024, dynamic: true }));
 
-        embed.setDescription('[CenterQuickMusic](https://www.youtube.com/channel/UCq7NsIPj_7DGwiKzeimi_mA)');
-        embed.addField('play Bir parça oynatır.');
-        embed.addField('queue Sıraya bir parça ekler.');
-        embed.addField('pause Oynatılan parçayı durdurur.');
-        embed.addField('resume Durdurulan parçayı devam ettirir.');
-        embed.addField('skip Sonraki parçayı çalar.');
-        embed.addField('back Önceki parçayı çalar.');
-        embed.addField('volume Ses düzeyini ayarlar.');
-        embed.addField('save Parçayı kayıt eder.');
-        embed.addField('stop Parçayı durdurur.');
-        embed.addField('search Youtube araması yapar.');
-        embed.addField('nowplaying Çalmakta olan parçayı gösterir.')
+        const commands = client.commands.filter(x => x.showHelp !== false);
 
-        embed.setFooter(`${message.author.username}` , message.author.avatarURL({ dynamic: true }));
+        embed.setDescription('m?play ile müzik çal\nm?resume müzik dinlemeye devam et\nm?stop müziği durdur\nm?search youtube de ara\nm?save kayıt et\nm?nowplaying oynatılana bak');
+        embed.addField(`Enabled - ${commands.size}`, commands.map(x => `\`${x.name}${x.aliases[0] ? ` (${x.aliases.map(y => y).join(', ')})\`` : '\`'}`).join(' | '));
 
-    message.channel.send({ embeds: [embed] });
+        embed.setTimestamp();
+        embed.setFooter('Mr. Thyphon', message.author.avatarURL({ dynamic: true }));
+
+        message.channel.send({ embeds: [embed] });
+    },
+      
+};
+
 
