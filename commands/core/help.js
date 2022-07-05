@@ -25,7 +25,6 @@ module.exports = {
         embed.addField('`search` Youtube araması yapar.');
         embed.addField('`nowplaying` Çalmakta olan parçayı gösterir.')
 
-        embed.setTimestamp();
         embed.setFooter(`${message.author.username}` , message.author.avatarURL({ dynamic: true }));
 
         message.channel.send({ embeds: [embed] });
