@@ -5,17 +5,26 @@ module.exports = {
     aliases: ['h', 'yardım'],
     showHelp: false,
     utilisation: '{prefix}help',
-
-    message.channel.send('`play` Bir parça oynatır.n\`queue` Sıraya bir parça ekler.n\
-        `pause` Oynatılan parçayı durdurur.n\
-        `resume` Durdurulan parçayı devam ettirir.n\
-        `skip` Sonraki parçayı çalar.n\
-        `back` Önceki parçayı çalar.n\
-        `volume` Ses düzeyini ayarlar.n\
-        `save` Parçayı kayıt eder.n\
-        `stop` Parçayı durdurur.n\
-        `search` Youtube araması yapar.n\
-        `nowplaying` Çalmakta olan parçayı gösterir.n\
-    ');
- 
 };
+
+    const embed = new MessageEmbed();
+
+        embed.setColor('RED');
+
+        embed.setDescription('[CenterQuickMusic](https://www.youtube.com/channel/UCq7NsIPj_7DGwiKzeimi_mA)');
+        embed.addField('play Bir parça oynatır.');
+        embed.addField('queue Sıraya bir parça ekler.');
+        embed.addField('pause Oynatılan parçayı durdurur.');
+        embed.addField('resume Durdurulan parçayı devam ettirir.');
+        embed.addField('skip Sonraki parçayı çalar.');
+        embed.addField('back Önceki parçayı çalar.');
+        embed.addField('volume Ses düzeyini ayarlar.');
+        embed.addField('save Parçayı kayıt eder.');
+        embed.addField('stop Parçayı durdurur.');
+        embed.addField('search Youtube araması yapar.');
+        embed.addField('nowplaying Çalmakta olan parçayı gösterir.')
+
+        embed.setFooter(`${message.author.username}` , message.author.avatarURL({ dynamic: true }));
+
+    message.channel.send({ embeds: [embed] });
+
